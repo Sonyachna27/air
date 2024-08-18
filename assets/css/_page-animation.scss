@@ -1,0 +1,49 @@
+.o-page{
+	z-index: 2;
+}
+.o-page__bg{
+z-index: -1;
+position: fixed;
+top: 0%;
+left: 0%;
+bottom:0%;
+right: 0%;
+overflow: hidden;
+}
+.o-page__bg__hor{
+	z-index: 1;
+	grid-row-gap: 5rem;
+	flex-direction: column;
+	display: flex;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	bottom:0%;
+	right: 0%;
+
+}
+.o-page__bg__vert {
+	z-index: 1;
+	grid-column-gap: 10rem;
+	display: flex;
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	left: 0%;
+	right: 0%
+}
+
+.o-page__bg__hline{
+	transform-origin:0% ;
+	border-top: 1px solid rgba(255, 255, 255, .05);
+}
+.o-page__bg__hline{
+	transform: scaleX(0);
+}
+.o-page__bg__vline{
+	transform-origin:50% 0% ;
+	border-left: 1px solid rgba(255, 255, 255, .05);
+}
+.o-page__bg__vline{
+	transform: scaleY(0);
+}

@@ -1,0 +1,72 @@
+@mixin titleH1{
+	font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+}
+@mixin titleH2{
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 130%;
+}
+@mixin titleH3{
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%;
+}
+@mixin titleH4{
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 120%; 
+}
+@mixin p3{
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+}
+@mixin p4{
+	font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 140%;
+}
+@mixin p6{
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 140%;
+}
+@mixin p5{
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+@mixin p7{
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+@mixin p8{
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 125%; 
+}
+@mixin p1{
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+}
+@mixin p2{
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 140%;
+}

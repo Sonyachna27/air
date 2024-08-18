@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'Red Hat Display';
+	src: url(../fonts/RedHatDisplay-Regular.ttf);
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Red Hat Display';
+	src: url(../fonts/RedHatDisplay-Medium.ttf);
+	font-weight: 500;
+}
+@font-face {
+	font-family: 'Red Hat Display';
+	src: url(../fonts/RedHatDisplay-Bold.ttf);
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Red Hat Display';
+	src: url(../fonts/RedHatDisplay-Black.ttf);
+	font-weight: 900;
+}
+
+$--dark-theme-background: #141721;
+$--dark-theme-blue-2: #181C27;
+$--white: #FFF;
+$--green:#00B27C;
+$--dark-blue:#252938;
+$--dark-theme-blue:#1E222F;
+$--blue: #306CE8;
+$--silver: #D1D1D2;
+$--silver-2: #D7DBE4;
+$--black: #2C2F36;
+$--red: #BE4D45;
+
+body{
+	font-family: 'Red Hat Display';
+	background-color: $--dark-theme-background;
+	color: $--white;
+}
+main{
+	margin-top: 40px;
+}
+.container{
+	max-width: 1330px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 500px;
+	color: $--black;
+	border: 1px solid $--dark-blue;
+	background: #E5E7EF;
+	padding: 13px 38px;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+section,
+footer{
+	position: relative;
+	z-index: 1;
+}
+.mb-m{
+	margin-bottom: 140px;
+	@media screen and  (max-width:1023px) {
+		margin-bottom: 100px;
+	}
+	@media screen and  (max-width:767px) {
+		margin-bottom: 70px;
+	}
+}
+.mb-s{
+	margin-bottom: 60px;
+}
