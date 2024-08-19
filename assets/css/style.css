@@ -464,6 +464,11 @@ footer {
   width: calc(33.3333333333% - 30px);
   align-items: center;
 }
+@media screen and (max-width: 1023px) {
+  .airdrop__items {
+    width: 100%;
+  }
+}
 .airdrop__items h3 {
   font-size: 24px;
   font-style: normal;
@@ -484,6 +489,7 @@ footer {
   overflow: hidden;
   overflow-y: auto;
   position: relative;
+  width: 100%;
 }
 .airdrop__wrapper::-webkit-scrollbar {
   background-color: #181C27;
