@@ -36,6 +36,8 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", function () {
 	airDropWrapperScroll();
 	toggleMenu();
+	airDropWrapperScroll();
+	showMoreLink();
 });	
 
 const toggleMenu = () =>{
@@ -56,58 +58,56 @@ const toggleMenu = () =>{
 }
 
 
-// 	const airDropWrapperScroll = () =>{
-// 	const wrappers = document.querySelectorAll('.airdrop__wrapper');
-// 	if(!wrappers) return;
-// 	// const maxScale = 1070 / 227; 
-// 	wrappers.forEach((wrapper) => {
-// 			wrapper.addEventListener('scroll', () => {
-// 				const progressBarHeight = document.querySelector('.progress-bar');
-// 				const maxScale = progressBarHeight.getBoundingClientRect().height;
-// 				console.log(maxScale);
+const airDropWrapperScroll = () => {
+	const wrappers = document.querySelectorAll('.airdrop__wrapper');
+	
 
-// 					let winScroll = wrapper.scrollTop;
-// 					let height = wrapper.scrollHeight - wrapper.clientHeight;
-// 					let scrolled = winScroll / height * maxScale;
-// 					scrolled = Math.max(scrolled, 1);
-// 					wrapper.querySelector(".progress").style.transform = `scaleY(${scrolled})`;
-// 			});
-// 	});
-// }
+	const minHeight = 100; 
 
-// const airDropWrapperScroll = () => {
-// 	const wrappers = document.querySelectorAll('.airdrop__wrapper');
-// 	if (!wrappers) return;
+	wrappers.forEach((wrapper) => {
+		const wrapperIncludeContent = wrapper.querySelectorAll('.airdrop__item');
+		const wrapperHeight = wrapper.clientHeight;
+		let totalContentHeight = 0;
+		wrapperIncludeContent.forEach(item => {
+				totalContentHeight += item.clientHeight;
+		});
 
-// 	wrappers.forEach((wrapper) => {
-// 			const progressBar = wrapper.querySelector('.progress');
+		if (totalContentHeight <= wrapperHeight) {
+				wrapper.classList.add('short');
+		} else {
+				wrapper.classList.remove('short'); 
+		}
+			const progressBar = wrapper.querySelector('.progress-bar');
+			progressBar.style.transform = `scaleY(${minHeight / wrapperHeight})`;
+			wrapper.addEventListener('scroll', () => {
+					const scrollTop = wrapper.scrollTop;
+					const scrollHeight = wrapper.scrollHeight - wrapper.clientHeight;
+					const scrollRatio = scrollTop / scrollHeight;
+					let scaleY = scrollRatio * (wrapperHeight - minHeight) / wrapperHeight + (minHeight / wrapperHeight);
+					scaleY = Math.min(scaleY, 1);
+					progressBar.style.transform = `scaleY(${scaleY})`;
+			});
+	});
+};
 
-// 			wrapper.addEventListener('scroll', () => {
-// 					// Отримання висоти батьківського блоку
-// 					const wrapperHeight = wrapper.getBoundingClientRect().height;
-// 					const progressBarHeight = progressBar.getBoundingClientRect().height;
+const showMoreLink = () => {
+	const allAirDropItems = document.querySelectorAll('.airdrop__item');
+	allAirDropItems.forEach((allAirDropItem) => {
+			const links = allAirDropItem.querySelectorAll('.airdrop__socials a');
+			const maxVisibleLinks = 3;
+			if (links.length > maxVisibleLinks) {
+					for (let i = maxVisibleLinks; i < links.length; i++) {
+							links[i].style.display = 'none';
+					}
+					const hiddenCount = links.length - maxVisibleLinks;
+					const extraLink = document.createElement('div'); 
+					extraLink.classList.add('extra-links');
+					extraLink.innerText = `+${hiddenCount}`;
+					allAirDropItem.querySelector('.airdrop__socials').appendChild(extraLink);
+			}
+	});
+};
 
-// 					// Отримання скролл-інформації
-// 					let winScroll = wrapper.scrollTop;
-// 					let height = wrapper.scrollHeight - wrapper.clientHeight;
 
-// 					// Обчислення пропорції скролу
-// 					let scrolled = winScroll / height;
 
-// 					// Перетворення пропорції в масштаб по Y
-// 					let scaleY = scrolled * (wrapperHeight / progressBarHeight);
-
-// 					// Обмеження масштабу, щоб не перевищити висоту батьківського блоку
-// 					scaleY = Math.min(scaleY, wrapperHeight / progressBarHeight);
-
-// 					// Якщо скрол досягає кінця, коригуємо scaleY, щоб досягти краю
-// 					if (winScroll + wrapper.clientHeight >= wrapper.scrollHeight) {
-// 							scaleY = wrapperHeight / progressBarHeight;
-// 					}
-
-// 					// Застосування масштабування
-// 					progressBar.style.transform = `scaleY(${scaleY})`;
-// 			});
-// 	});
-// };
 

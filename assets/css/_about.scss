@@ -51,6 +51,11 @@
 	& h3{
 		@include titleH3;
 		margin-bottom: 20px;
+		display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* Задайте кількість рядків, які потрібно відображати */
+    overflow: hidden;
+    text-overflow: ellipsis;
 	}
 	& p{
 		@include p3;
