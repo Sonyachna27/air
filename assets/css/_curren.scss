@@ -1,0 +1,52 @@
+.curren{
+	overflow: hidden;
+	overflow-x: auto;
+}
+.curren__title{
+text-align: center;
+margin: 0 auto;
+margin-bottom: 60px;
+max-width: 700px;
+	& h2{
+		@include titleH2;
+	}
+}
+.curren__table{
+display: flex;
+flex-direction: column;
+gap: 2px;
+width: 100%;
+overflow: hidden;
+overflow-x: auto;
+white-space: nowrap;
+}
+.curren__table-row{
+	display: flex;
+	align-items: center;
+	padding: 25px 40px;
+	width: 100%;
+	gap: 40px;
+	background-color: $--dark-theme-blue;
+	display: grid;
+	grid-template-columns: 49% 18% 48px 22%;
+}
+.curren__row__name{
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	min-width: 100%;
+	& span{
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+}
+.curren__row__price{
+	min-width: 100%;
+}
+.curren__row-rating{
+	min-width: 100%;
+}
+.curren__row__circulate{
+	min-width: 100%;
+}

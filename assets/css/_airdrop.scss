@@ -26,7 +26,6 @@
 .airdrop__wrapper{
 	display: flex;
 	flex-direction: row-reverse;
-	align-content: stretch;
 	max-height: 80vh;
 	height: 100%;
 	overflow: hidden;
@@ -93,10 +92,12 @@
 }
 .airdrop__item{
 	padding: 30px;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	// display: flex;
+	// flex-direction: column;
 	min-height: 206px;
-	height: 146px;
+	max-height: fit-content;
+	height: 100%;
 	width: 100%;
 	border-radius: 20px;
 	background: var(--dark-theme-blue-2, #181C27);
@@ -107,6 +108,22 @@
 	align-items: flex-start;
 	padding-bottom: 20px;
 	border-bottom:1px solid #252938 ;
+	
+}
+.airdrop-cat{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 5px 15px;
+	border-radius: 0px 20px 0px 0px;
+	@include p6;
+	&.green{
+		background-color: $--green;
+	}
+	&.red{
+		background-color: $--red;
+	}
+
 }
 .airdrop__item_top-name{
 	display: flex;
@@ -132,21 +149,23 @@
 .airdrop__socials{
 	display: flex;
 	gap: 5px;
-}
-.extra-links{
-	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding: 8px;
-	width: 32px;
-	height: 32px;
-	border-radius: 50%;
-	background-color: #252938;
-	font-size: 10px;
-font-style: normal;
-font-weight: 700;
-line-height: 140%; 
+	flex-wrap: wrap;
 }
+// .extra-links{
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	padding: 8px;
+// 	width: 32px;
+// 	height: 32px;
+// 	border-radius: 50%;
+// 	background-color: #252938;
+// 	font-size: 10px;
+// font-style: normal;
+// font-weight: 700;
+// line-height: 140%; 
+// }
 .airdrop__bottom{
 	margin-top: 20px;
 	display: flex;
