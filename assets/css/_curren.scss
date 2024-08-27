@@ -1,6 +1,5 @@
 .curren{
-	overflow: hidden;
-	overflow-x: auto;
+	
 }
 .curren__title{
 text-align: center;
@@ -11,21 +10,28 @@ max-width: 700px;
 		@include titleH2;
 	}
 }
+.curren__table-wrap{
+	overflow: hidden;
+	overflow-x: auto;
+	min-width: 100%;
+	white-space: nowrap;
+}
 .curren__table{
 display: flex;
 flex-direction: column;
 gap: 2px;
 width: 100%;
-overflow: hidden;
-overflow-x: auto;
+// overflow: hidden;
+// overflow-x: auto;
 white-space: nowrap;
 }
 .curren__table-row{
 	display: flex;
 	align-items: center;
 	padding: 25px 40px;
+	min-width: 100%;
 	width: 100%;
-	gap: 40px;
+	// gap: 40px;
 	background-color: $--dark-theme-blue;
 	display: grid;
 	grid-template-columns: 49% 18% 48px 22%;
@@ -34,7 +40,7 @@ white-space: nowrap;
 	display: flex;
 	align-items: center;
 	gap: 30px;
-	min-width: 100%;
+	min-width: fit-content;
 	& span{
 		display: flex;
 		align-items: center;
@@ -42,11 +48,11 @@ white-space: nowrap;
 	}
 }
 .curren__row__price{
-	min-width: 100%;
+	min-width: fit-content;
 }
 .curren__row-rating{
-	min-width: 100%;
+	min-width: fit-content;
 }
 .curren__row__circulate{
-	min-width: 100%;
+	min-width: fit-content;
 }

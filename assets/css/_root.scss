@@ -25,19 +25,22 @@ $--white: #FFF;
 $--green:#00B27C;
 $--dark-blue:#252938;
 $--dark-theme-blue:#1E222F;
-$--blue: #306CE8;
+$--blue: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
 $--silver: #D1D1D2;
 $--silver-2: #D7DBE4;
 $--black: #2C2F36;
 $--red: #BE4D45;
 
+ html.open{
+	overflow: hidden;
+}
 body{
 	font-family: 'Red Hat Display';
 	background-color: $--dark-theme-background;
 	color: $--white;
 }
 main{
-	margin-top: 40px;
+	margin-top: 170px;
 }
 .container{
 	max-width: 1330px;
@@ -63,33 +66,12 @@ main{
 		margin-bottom: 0;
 		transition: .4s linear;
 	}
-	&:after {
-		content: '';
-		width: calc(100% + 4px);
-		height: calc(100% + 4px);
-		background-color: $--blue;
-		position: absolute;
-		top: -1px;
-		left: -1px;
-		bottom: -1px;
-		right:  -1px;
-		transform: scaleX(0); 
-    transform-origin: left; 
-		border-radius: inherit;
-		z-index: 0;
-		border: 1px solid transparent;
-		transition: transform 0.4s linear; 
-		animation-duration: 0.4s;            
-  animation-timing-function: linear;    
-  animation-fill-mode: forwards; 
-	}
 &:hover{
 	& span{
 		color: $--white;
 	}
 	&::after{
 		transform: scaleX(1);
-		// animation-name: animateHover;
 	}
 }
 &:not(:hover):after {
@@ -97,7 +79,6 @@ main{
 	transform: scaleX(0);
 }
 }
-//
 
 a.btn{
 	& span{

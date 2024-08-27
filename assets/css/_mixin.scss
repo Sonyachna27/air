@@ -3,24 +3,36 @@
 font-style: normal;
 font-weight: 700;
 line-height: 120%;
+@media screen and (max-width:767px) {
+	font-size: 30px;
+}
 }
 @mixin titleH2{
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 130%;
+	@media screen and (max-width:767px) {
+		font-size: 30px;
+	}
 }
 @mixin titleH3{
 	font-size: 32px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 120%;
+	@media screen and (max-width:767px) {
+		font-size: 22px;
+	}
 }
 @mixin titleH4{
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 120%; 
+	@media screen and (max-width:767px) {
+		font-size: 20px;
+	}
 }
 @mixin p3{
 	font-size: 16px;
@@ -69,4 +81,10 @@ line-height: 140%;
 	font-style: normal;
 	font-weight: 500;
 	line-height: 140%;
+}
+@mixin gold-text{
+	 background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 27.8%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 }

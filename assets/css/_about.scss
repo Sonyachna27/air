@@ -1,6 +1,4 @@
-.about__container{
 
-}
 .about__title{
 	
 	max-width: 700px;
@@ -53,7 +51,7 @@
 		margin-bottom: 20px;
 		display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1; /* Задайте кількість рядків, які потрібно відображати */
+    -webkit-line-clamp: 1; 
     overflow: hidden;
     text-overflow: ellipsis;
 	}
@@ -76,7 +74,7 @@
 			content: '';
 			width: 6px;
 			height: 6px;
-			background-color: $--blue;
+			background: $--blue;
 			border-radius: 50%;
 		}
 		}
