@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	toggleMenu();
 	observeElements();
 	newsSliderFunction();
+	accordionFunction();
+	showNavLink();
 });	
 
 const toggleMenu = () =>{
@@ -103,6 +105,7 @@ const newsSliderFunction = () =>{
 	const newsSlider = new Swiper(".newsSlider", {
       pagination: {
         el: ".news-pagination",
+				clickable: true,
       },
 			navigation: {
         nextEl: ".news-button-next",
@@ -137,16 +140,28 @@ const observeElements = () => {
       scrollTrigger: {
         trigger: zone,
         start: "top bottom", 
-        end: "50% top", 
-        scrub: true, // синхронізує анімацію з прокруткою
-        // onUpdate: (self) => {
-        //   // Функція для додаткової обробки, якщо потрібно
-        //   console.log(`Елемент ${zone.id || 'без id'} на ${Math.min(self.progress * 100, 100).toFixed(2)}%`);
-        // }
+        end: "bottom top", 
+        scrub: true, 
       }
     });
   });
 
 }
 
+const accordionFunction = () =>{
+  const accordionItemsProduct = document.querySelectorAll(".accord-item");
+  // if (!accordionItemsProduct) return
+    accordionItemsProduct.forEach((item) => {
+      item.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+    });
+  }
 
+	const showNavLink = () =>{
+		const navBarItem = document.querySelectorAll( ".header__nav .menu li:has(.sub-menu)");
+			navBarItem.forEach((footerLink) => {
+				footerLink.addEventListener("click", () => footerLink.classList.toggle("show"));
+			});
+		
+	}

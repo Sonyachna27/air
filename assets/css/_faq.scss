@@ -1,0 +1,11 @@
+.faq__title{
+	text-align: center;
+	@include titleH2;
+	margin-bottom: 60px;
+	
+}
+.faq__container{
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+}

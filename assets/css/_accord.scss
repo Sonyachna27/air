@@ -1,0 +1,168 @@
+.accord {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+	gap: 10px;
+  }
+  .accord-item {
+	max-width: 100%;
+	width: 100%;
+	cursor: pointer;
+	transition: all 0.3s linear;
+	
+	&-top {
+	  max-width: 100%;
+	  width: 100%;
+	  display: flex;
+	  align-items: center;
+	  gap: 20px;
+		
+	  padding: 30px 40px;
+	  border-radius: 500px;
+		background-color: $--dark-theme-blue-2;
+		z-index: 2;
+		transition: .3s linear;
+	  @media screen and (max-width: 767px) {
+		padding: 15px;
+		gap: 10px;
+		
+	  }
+	  @media screen and (max-width: 367px) {
+		gap: 10px;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		white-space: normal;
+		white-space: pre-wrap;
+	  }
+	  & p {
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		white-space: normal;
+		white-space: pre-wrap;
+		margin-bottom: 0;
+		@include titleH4;
+		@media screen and (max-width:515px) {
+			font-size: 16px;
+		}
+		@media screen and (max-width: 367px) {
+		  overflow-wrap: anywhere;
+			
+		}
+	  }
+	  & svg {
+		max-width: 48px;
+		max-height: 48px;
+		width: 100%;
+		height: 100%;
+		margin-right: 5px;
+		transition: all 0.3s linear;
+		margin-left: auto;
+		& path,
+		& circle{
+			transition: .3s linear;
+		}
+		@media screen and (max-width: 767px) {
+		max-width: 31px;
+		max-height: 31px;
+		  }
+	  }
+	}
+	&-bottom {
+		opacity: 0;
+		max-height: 0;
+		overflow: hidden;
+		visibility: hidden;
+		transition: 0.35s ease;
+		padding: 80px 40px 0px 40px;
+		position: relative;
+		z-index: -1;
+		margin-top: -80px;
+	  & p {
+		@include p1;
+		margin-bottom: 0;
+	  }
+		@media screen and (max-width:767px) {
+			padding: 50px 20px 0px 20px;
+			margin-top: -50px;
+		}
+	}
+  }
+  .accord-count{
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 120%;
+		padding: 5px 15px;
+		background-color: $--dark-blue;
+		border-radius: 500px;
+		max-width:50px;
+		transition: .3s linear;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	@media screen and (max-width:767px) {
+		font-size: 14px;
+		min-width:37px;
+		padding: 4px 10px;
+	}
+	@media screen and (max-width:367px) {
+		font-size: 12px;
+		min-width:37px;
+		padding: 4px;
+	}
+  }
+	.icon-wrapper {
+    position: relative;
+    width: 48px;
+    height: 48px;
+		margin-left: auto;
+}
+
+.initial-state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition:  0.3s linear;
+}
+
+.hover-state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition:  0.3s linear;
+}
+
+  .accord-item.active .accord-item-bottom {
+		background-color: $--dark-blue;
+		opacity: 1;
+		max-height: 100vh;
+		overflow: visible;
+		padding: 80px 40px 40px 40px;
+    border-radius: 0 0 10px 10px;
+    z-index: -1;
+    position: relative;
+    border-radius: 0px 0px 20px 20px;
+    margin-top: -46px;
+    z-index: -5;
+		visibility: visible;
+ 
+	@media screen and (max-width: 767px) {
+	  padding: 50px 20px 20px 20px;
+	  margin-top: -50px;
+	}
+	
+  }
+  .accord-item:hover .accord-count,
+  .accord-item.active .accord-count{
+		background: $--blue;
+	}
+	.accord-item:hover .initial-state,
+	.accord-item.active .initial-state {
+    opacity: 0;
+}
+.accord-item:hover .hover-state,
+	.accord-item.active  .hover-state {
+	opacity: 1;
+}
+
