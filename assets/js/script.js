@@ -40,12 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	newsSliderFunction();
 	accordionFunction();
 	showNavLink();
+	showFilters();
+	similarSwiper();
 });	
 
 const toggleMenu = () =>{
 	const htmlElement = document.querySelector("html");
 	const burgerMenu = document.querySelector(".burgerBtn");
-  // const headerNav = document.querySelector(".header__nav");
   const navLinks = document.querySelectorAll("nav a");
 
   burgerMenu.addEventListener("click", () =>
@@ -160,8 +161,36 @@ const accordionFunction = () =>{
 
 	const showNavLink = () =>{
 		const navBarItem = document.querySelectorAll( ".header__nav .menu li:has(.sub-menu)");
-			navBarItem.forEach((footerLink) => {
-				footerLink.addEventListener("click", () => footerLink.classList.toggle("show"));
+			navBarItem.forEach((navBarLink) => {
+				navBarLink.addEventListener("click", () => navBarLink.classList.toggle("show"));
 			});
 		
 	}
+	const showFilters = () =>{
+		const filterItem = document.querySelectorAll( ".filter");
+		filterItem.forEach((filter) => {
+				filter.addEventListener("click", () => filter.classList.toggle("showFilter"));
+			});
+		
+	}
+const similarSwiper = () =>{
+	const similarSwiperInit = document.querySelector('.similarSwiper');
+	if(!similarSwiperInit) return;
+	const similarSlider = new Swiper(".similarSwiper", {
+		
+		pagination: {
+			el: ".similar-pagination",
+		},	slidesPerView: 1,
+		spaceBetween: 10,
+		breakpoints: {
+			767: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			1023: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+		},
+	});
+}

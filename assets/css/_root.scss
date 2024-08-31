@@ -30,6 +30,9 @@ $--silver: #D1D1D2;
 $--silver-2: #D7DBE4;
 $--black: #2C2F36;
 $--red: #BE4D45;
+$--dark-red:#3E2220;
+$--gold: #D2B143;
+$--light-gold: #ffdd6e;
 
  html.open{
 	overflow: hidden;
@@ -60,31 +63,13 @@ main{
 	border: 1px solid transparent;
 	cursor: pointer;
 	position: relative;
-	& span{
-		position: relative;
-		z-index: 1;
-		margin-bottom: 0;
-		transition: .4s linear;
-	}
-&:hover{
-	& span{
-		color: $--white;
-	}
-	&::after{
-		transform: scaleX(1);
-	}
+
 }
-&:not(:hover):after {
-	transform-origin: right;
-	transform: scaleX(0);
-}
+.gold-btn{
+	background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
+	color: #141721;
 }
 
-a.btn{
-	& span{
-		margin-bottom: 0;
-	}
-}
 section,
 footer{
 	position: relative;
@@ -95,10 +80,104 @@ footer{
 	@media screen and  (max-width:1023px) {
 		margin-bottom: 100px;
 	}
-	@media screen and  (max-width:767px) {
-		margin-bottom: 70px;
-	}
+
 }
 .mb-s{
 	margin-bottom: 60px;
 }
+.breadcrumbs {
+
+}
+.breadcrumbs__container {
+  padding: 25px 0 60px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  & a {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    
+  }
+  & span {
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; 
+  }
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.page-wrap{
+	display: flex;
+	gap: 20px;
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+	}
+
+}
+.main-content{
+	width: 67%;
+	@media screen and (max-width:767px) {
+		width: 100%;
+	}
+}
+.navbar{
+	width: 33%;
+	@media screen and (max-width:767px) {
+		width: 100%;
+	}
+	& div:not([class]){
+		@include titleH4;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	& .btn{
+		max-width: 100%;
+		width: 100%;
+		margin-bottom: 60px;
+	}
+}
+.navbar-news,
+.airdrop-list{
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.socials{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 5px;
+		& a{
+			max-width: 64px;
+			max-height: 64px;
+			width: 100%;
+			height: 100%;
+			& svg{
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.center-title{
+		text-align: center;
+		padding: 0 20px;
+		@include titleH1;
+		margin-bottom: 60px;
+	}

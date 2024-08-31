@@ -156,6 +156,7 @@
   .accord-item:hover .accord-count,
   .accord-item.active .accord-count{
 		background: $--blue;
+		color: $--dark-theme-background;
 	}
 	.accord-item:hover .initial-state,
 	.accord-item.active .initial-state {

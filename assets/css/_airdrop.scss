@@ -32,6 +32,7 @@
 	overflow-y: auto;
 	position: relative;
 	width: 100%;
+	scrollbar-width: none;
 	&::-webkit-scrollbar {
 		background-color: #181C27;
 			width: 6px;
@@ -93,7 +94,6 @@
 .airdrop__item{
 	padding: 30px;
 	position: relative;
-	min-height: 206px;
 	max-height: fit-content;
 	height: 100%;
 	width: 100%;
@@ -150,20 +150,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
-// .extra-links{
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// 	padding: 8px;
-// 	width: 32px;
-// 	height: 32px;
-// 	border-radius: 50%;
-// 	background-color: #252938;
-// 	font-size: 10px;
-// font-style: normal;
-// font-weight: 700;
-// line-height: 140%; 
-// }
+
 .airdrop__bottom{
 	margin-top: 20px;
 	display: flex;

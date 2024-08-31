@@ -1,6 +1,6 @@
 
+
 .about__title{
-	
 	max-width: 700px;
 	text-align: center;
 	margin: 0 auto;
@@ -19,6 +19,14 @@
 	background: linear-gradient(180deg, #181C27 0%, #141721 100%);
 @media screen and (max-width:1023px) {
 	flex-direction: column-reverse;
+	width: 100vw;
+	margin-left: -20px;
+	margin-right: -25px;
+	padding: 70px 40px 0 40px;
+}
+@media screen and (max-width:767px) {
+
+	padding: 40px 20px 0 20px;
 }
 }
 .about__image{
