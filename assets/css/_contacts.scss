@@ -1,0 +1,100 @@
+.contact__title{
+	text-align: center;
+	margin-bottom: 60px;
+	& h2{
+		@include titleH1;
+	}
+}
+.contact__wrap{
+	display: flex;
+	gap: 20px;
+	@media screen and (max-width:767px) {
+		flex-direction: column;
+	}
+}
+.get{
+	width: 41%;
+	border-radius: 20px;
+border: 1px solid $--dark-blue;
+background: $--dark-theme-blue-2;
+padding: 40px;
+@media screen and (max-width:767px){
+	width: 100%;
+}
+@media screen and (max-width:640px){
+	padding: 40px 20px;
+}
+& h3{
+	@include titleH3;
+	margin-bottom: 10px;
+}
+& p{
+	@include p3;
+	margin-bottom: 30px;
+}
+& form{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	& input:not([type="submit"]),
+	& textarea{
+		padding: 15px 20px;
+		border-radius: 10px;
+		background:$--dark-blue;
+		outline: none;
+		border: none;
+		color: $--silver;
+		&::placeholder{
+			@include p3;
+		}
+	}
+	& textarea{
+		resize: none;
+		min-height: 167px;
+	}
+}
+}
+.contacts{
+	width: 58%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	@media screen and (max-width:767px){
+		width: 100%;
+	}
+}
+.contacts__item{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: center;
+	padding: 40px;
+	border-radius: 20px;
+	border: 1px solid $--dark-blue;
+	background: $--dark-theme-blue-2;
+	@include titleH4;
+	line-height: 140%;
+	min-height: 174px;
+	flex-grow: 1;
+	@media screen and (max-width:640px){
+		padding: 30px;
+	}
+}
+.contact__socials{
+	justify-content: left;
+	gap: 10px;
+}
+.contact__socials__item{
+	gap: 30px;
+	flex-grow: 2;
+	@media screen and (max-width:640px){
+		padding: 40px;
+		& a{
+			max-width: 74px;
+			max-height: 74px;
+			& svg{
+				aspect-ratio: 1;
+			}
+		}
+	}
+}

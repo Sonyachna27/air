@@ -143,7 +143,7 @@ header{
 						font-style: normal;
 						font-weight: 700;
 						line-height: 120%;
-						width: calc(100% - 40px);
+						width: 100%;
 						padding: 30px 0;
 						align-items: flex-start;
 						border-bottom: 1px solid $--silver;
@@ -159,7 +159,6 @@ header{
 						&.show:after{
 								background: url(../images/vector-blue.svg) center center / contain no-repeat;
 								transform: rotate(0deg);
-							
 						}
 					}
 					@media screen and (min-width:1024px) {
@@ -318,20 +317,23 @@ header{
 
 		& span{
 			width: 20px;
-			height: 2px;
-			background-color: $--white;
+			height: 3px;
+			background-color: $--dark-theme-background;
+			border-radius: 500px;
 			transition: .3s ease-in-out;
 			cursor: pointer;
 			opacity: 1;
 			.open &{
 				&:nth-of-type(1){
-					transform: rotate(360deg) rotate(45deg) translate(3px, 4px) ;
+					transform: rotate(360deg) rotate(45deg) translate(3px, 4px)  scale(1.07);
 				}
 			
 				&:nth-of-type(2){
-					transform:rotate(360deg) rotate(-45deg) translate(3px, -5px) ;
+					transform:rotate(360deg) rotate(-45deg) translate(2px, -3px)  scale(1.07);
 				}
 			}
 		}
 	}
 }
+
+
