@@ -94,7 +94,7 @@ margin-bottom: 30px;
 		@include p3;
 		margin-bottom: 15px;
 		&:has( + div){
-margin-bottom: 30px;
+		margin-bottom: 30px;
 		}
 	}
 	& div{
@@ -122,19 +122,9 @@ margin-bottom: 30px;
 				}
 				& a{
 					position: relative;
-					background: var(--Dark-Theme-Gradient, linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%));
-					background-clip: text;
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;	
-				&:after{
-					content: '';
-					width: 100%;
-					height: 1px;
-					background: $--blue;
-					position: absolute;
-					bottom: 1px;
-					left: 0;
-				}			}
+					color: $--gold;
+					text-decoration: underline;	
+				}
 			}
 		}
 	}
@@ -144,7 +134,14 @@ margin-bottom: 30px;
 	width: fit-content;
 	padding: 5px 15px;
 	border-radius: 500px;
-	background: $--dark-red;
-	color: $--red;
+	
 	margin-bottom: 10px;
+	&.red{
+		background: $--dark-red;
+		color: $--red;
+	}
+	&.green{
+		background: $--green;
+		color: $--white;
+	}
 }
