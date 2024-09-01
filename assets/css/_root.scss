@@ -19,6 +19,7 @@
 	font-weight: 900;
 }
 
+
 $--dark-theme-background: #141721;
 $--dark-theme-blue-2: #181C27;
 $--white: #FFF;
@@ -181,3 +182,7 @@ footer{
 		@include titleH1;
 		margin-bottom: 60px;
 	}
+	.scroll {
+		overflow: hidden;
+	 overflow-x: auto;
+	 }
