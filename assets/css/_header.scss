@@ -94,15 +94,16 @@ header{
 		position: relative;
 		@media screen and (max-width:1023px) {
 			width: 100%;
-			margin-bottom: 40px;
+			padding: 46px 0;
+			height: 100%;
 		}
 	}
 	@media screen and (max-width:1023px) {
 		position: fixed;
 				background-color: $--dark-blue;
 				width: 100%;
-				height: calc(100vh - 40px);
-				top: 40px;
+				height: calc(100vh - 17px);
+				top: 17px;
 				left: -100%;
 				display: flex;
         flex-direction: column;
@@ -110,8 +111,8 @@ header{
         justify-content: center;
 				padding-top: 115px;
 				z-index: -1;
-				overflow: hidden;
-        overflow-y: auto;
+				overflow-y: auto;
+				padding-top: 117px;
 				.open &{
 					left: 0;
 				}

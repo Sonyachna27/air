@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	showNavLink();
 	showFilters();
 	similarSwiper();
+	// updateHeaderHeight();
 });	
 
 const toggleMenu = () =>{
@@ -166,6 +167,29 @@ const accordionFunction = () =>{
 			});
 		
 	}
+// 	const updateHeaderHeight = () => {
+//     const wrapper = document.querySelector('.header__nav');
+//     const dropdownItems = document.querySelectorAll('.header__nav .menu li:has(.sub-menu)');
+
+//     dropdownItems.forEach((dropdown) => {
+//         let isDropdownOpen = false; // Булева змінна для відстеження стану для кожного випадаючого списку
+
+//         dropdown.addEventListener('click', () => {
+//             const dropdownHeight = dropdown.scrollHeight;
+// 						console.log(dropdownHeight);
+
+//             if (isDropdownOpen) {
+// 							wrapper.style.height = `calc(100vh - 17px)`;
+//             } else {
+// 							wrapper.style.height = `calc(100vh - 40px + (${dropdownHeight} / 2)px)`;
+//             }
+//             isDropdownOpen = !isDropdownOpen;
+//         });
+//     });
+// };
+
+
+
 	const showFilters = () =>{
 		const filterItem = document.querySelectorAll( ".filter");
 		filterItem.forEach((filter) => {
