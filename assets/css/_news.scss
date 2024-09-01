@@ -102,6 +102,9 @@ line-height: 140%;
 .news__item__wrap{
 	position: relative;
 }
+.news__slider__wrap{
+	position: relative;
+}
 .newsSlider{
 	width: 95%;
 }
@@ -112,7 +115,7 @@ line-height: 140%;
 	justify-content: center;
 	background: $--dark-blue;
 	border-radius: 50%;
-	top: 50%;
+	top: 40%;
 	z-index: 10;
 	max-width: 62px;
 	max-height: 62px;
@@ -120,6 +123,9 @@ line-height: 140%;
 	height: 100%;
 	cursor: pointer;
 	transition: .3s ease;
+	@media screen and (max-width:767px) {
+		display: none;
+	}
 	& svg{
 		width: 20px;
 		height: 13px;
