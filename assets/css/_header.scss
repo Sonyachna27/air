@@ -14,29 +14,29 @@ header{
 	padding: 10px 0;
 	border-bottom: 1px solid $--dark-blue;
 	background-color: $--dark-theme-background;
+	position: relative;
+	user-select: none;
 }
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 20px));
   }
 }
 .header__top-content,
 .header__top-content-second{
+
 		display: flex;
 		flex-direction: row;
-		animation: slideLeft 65s linear infinite;
 		column-gap: 37px;
-		margin-right: 50px;
 		-webkit-box-pack: start;
     -ms-flex-pack: start;
     display: flex;
     justify-content: flex-start;
-		
+		animation: slideLeft 65s infinite linear;
 }
-
 
 .header__container-link{
 	display: flex;
@@ -45,6 +45,7 @@ header{
 	width: 250px;
     white-space: nowrap;
 		padding: 10px 20px;
+		transition: all 0.1s ease-in-out;
 		& img{
 			width: 26px;
 			height: 26px;
