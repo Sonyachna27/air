@@ -107,6 +107,8 @@ header{
 				width: 100%;
 				height: calc(100vh - 17px);
 				top: 17px;
+				bottom: 0;
+				right: 0;
 				left: -100%;
 				display: flex;
         flex-direction: column;
@@ -150,7 +152,12 @@ header{
 						width: 100%;
 						padding: 30px 0;
 						align-items: flex-start;
-						border-bottom: 1px solid $--silver;
+						&:not(:nth-last-of-type(1)){
+							border-bottom: 1px solid $--silver;
+						}
+						&:nth-last-of-type(1){
+							padding-top: 40px;
+						}
 						&.show > .sub-menu{
 							display: flex;
               flex-direction: column;
@@ -207,8 +214,6 @@ header{
 					}
 					&::after{
 						content: '';
-						width: 8px;
-						height: 8px;
 						background: url(../images/vector-white.svg) center center / contain no-repeat;
 						width: 8px;
 						height: 8px;

@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	showFilters();
 	similarSwiper();
 	wrapTablesInDiv();
+	stickyName();
 });	
 
 const toggleMenu = () =>{
@@ -262,3 +263,27 @@ const animationHeader = () => {
 }
 
 
+const stickyName = () => {
+	const stickyNameWrap = document.querySelectorAll('.sticky-name');
+	const footer = document.querySelector('footer');
+	stickyNameWrap.forEach((sticky) => {
+			function handleScroll() {
+					const windowInnerWidth = window.innerWidth;
+					const boundingRectHeight = sticky.getBoundingClientRect().height;
+					const scrollThreshold = 200; 
+					if (windowInnerWidth <= 1023) {
+							const body = document.body;
+							if (window.scrollY >= scrollThreshold) {
+									body.classList.add('sticky-body');
+									footer.style.marginBottom = `${boundingRectHeight}px`;
+							} else {
+									body.classList.remove('sticky-body');
+									footer.style.marginBottom = `0px`;
+							}
+					} else {
+							document.body.classList.remove('sticky-body');
+					}
+			}
+			window.addEventListener('scroll', handleScroll);
+	});
+};

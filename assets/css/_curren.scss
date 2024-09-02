@@ -1,5 +1,12 @@
-.curren{
-	
+.curren__container{
+	& .btn{
+		margin: 0 auto;
+		width: 100%;
+		max-width: 190px;
+		@media screen and (max-width:767px) {
+			max-width: 100%;
+		}
+	}
 }
 .curren__title{
 text-align: center;
@@ -12,63 +19,26 @@ max-width: 700px;
 }
 
 .curren__table-wrap{
+	margin-bottom: 60px;
 	& table{
 		max-width: 100%;
     width: 100%;
     border-collapse: separate;
 		border-spacing: 0 3px;
 		border-radius: 10px;
-		margin-bottom: 60px;
+		overflow: hidden;
 		@media screen and (max-width:767px) {
 			margin-bottom: 50px;
 		}
-		& thead{
-			border-radius: 10px 10px 0 0;
-			color: $--dark-theme-background;
-			& tr{
-				background: $--blue;
-				border-radius: 10px 10px 0 0;
-			& td{
-		  &:first-child {
-            border-radius: 10px 0 0 0; // Верхній лівий кут таблиці
-        }
-        &:last-child {
-            border-radius: 0 10px 0 0; // Верхній правий кут таблиці
-        }
-				&:nth-of-type(3){
-					& span{
-						background-color: transparent;
-						color: $--dark-theme-background;
-					}
-				}
-			}
-			}
-			width: auto;
-		
-		}
-		& tbody{
-			& tr{
-				background: $--dark-theme-blue;
-				&:nth-last-of-type(1){
-					border-radius: 0px 0px 10px 10px;
-					border-radius: 10px;
-					td:nth-of-type(1){
-						border-radius: 0 0 0 10px;
-					}
-					td:nth-last-of-type(1){
-						border-radius: 0 0 10px 0;
-					}
-				}
-			}
-		}
-		
-		& td{
+		& td,
+		& th{
 			padding: 20px 40px;
 			white-space: nowrap;
 			font-size: 18px;
 			font-style: normal;
 			font-weight: 500;
 			line-height: 125%;
+		
 			&:not(:nth-of-type(1)){
 				text-align: center;
 				
@@ -103,8 +73,38 @@ max-width: 700px;
 				width: 22%;
 			}
 		}
+		& tr:nth-of-type(1){
+			background: $--blue;
+			color: $--dark-theme-blue;
+			& th:nth-of-type(3){
+				& span{
+					background-color: transparent;
+				color: $--dark-theme-blue;
+				}
+			}
+		}
+		
+			& tr{
+				background: $--dark-theme-blue;
+				&:last-child td:first-child{
+					border-bottom-left-radius: 10px;
+				}
+				&:last-child td:last-child{
+					border-bottom-right-radius: 10px;
+				}
+				&:first-child th:first-child{
+					border-top-left-radius: 10px;
+				}
+				&:first-child th:last-child{
+					border-top-right-radius: 10px;
+				}
+			
+			}
+		
+		
+		
 	}
-	& .btn{
-		margin: 0 auto;
-	}
+
 }
+
+

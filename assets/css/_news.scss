@@ -5,6 +5,7 @@
 margin: 0 auto;
 margin-bottom: 60px;
 max-width: 700px;
+text-align: center;
 }
 .news-item{
 	height: 100%;
@@ -89,9 +90,9 @@ div.coins{
 		align-items: center;
 		color: $--black;
 		font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 140%;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 140%;
 	& img{
 		width: 15px;
 		height: 15px;
