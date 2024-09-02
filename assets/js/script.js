@@ -34,6 +34,8 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+	animationHeader();
+	// toggleClasses();
 	airDropWrapperScroll();
 	toggleMenu();
 	observeElements();
@@ -43,14 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	showFilters();
 	similarSwiper();
 	wrapTablesInDiv();
-	// updateHeaderHeight();
 });	
 
 const toggleMenu = () =>{
 	const htmlElement = document.querySelector("html");
 	const burgerMenu = document.querySelector(".burgerBtn");
   const navLinks = document.querySelectorAll("nav a");
-
   burgerMenu.addEventListener("click", () =>
     htmlElement.classList.toggle("open")
   );
@@ -99,10 +99,8 @@ const newsSliderFunction = () =>{
 		const newsArrowPrev = document.querySelector(".news-button-prev");
 		const newsArrowNext = document.querySelector(".news-button-next");
 		const windowInnerWidth = window.innerWidth;
-	console.log(windowInnerWidth);
-	
 		
-    if (newsSliderInit.length < 2 || windowInnerWidth <= 767) {
+    if (newsSliderInit.length < 2 || windowInnerWidth <= 768) {
       newsArrowPrev.style.display = "none";
       newsArrowNext.style.display = "none";
     } else {
@@ -157,7 +155,6 @@ const observeElements = () => {
 
 const accordionFunction = () =>{
   const accordionItemsProduct = document.querySelectorAll(".accord-item");
-  // if (!accordionItemsProduct) return
     accordionItemsProduct.forEach((item) => {
       item.addEventListener("click", function () {
         this.classList.toggle("active");
@@ -181,28 +178,6 @@ const accordionFunction = () =>{
 			wrapper.appendChild(table);
 		});
 	};
-
-
-// 	const updateHeaderHeight = () => {
-//     const wrapper = document.querySelector('.header__nav');
-//     const dropdownItems = document.querySelectorAll('.header__nav .menu li:has(.sub-menu)');
-
-//     dropdownItems.forEach((dropdown) => {
-//         let isDropdownOpen = false; // Булева змінна для відстеження стану для кожного випадаючого списку
-
-//         dropdown.addEventListener('click', () => {
-//             const dropdownHeight = dropdown.scrollHeight;
-// 						console.log(dropdownHeight);
-
-//             if (isDropdownOpen) {
-// 							wrapper.style.height = `calc(100vh - 17px)`;
-//             } else {
-// 							wrapper.style.height = `calc(100vh - 40px + (${dropdownHeight} / 2)px)`;
-//             }
-//             isDropdownOpen = !isDropdownOpen;
-//         });
-//     });
-// };
 
 
 
@@ -234,3 +209,56 @@ const similarSwiper = () =>{
 		},
 	});
 }
+// якщо не використовувати функцію з модуля то ця для анімації хедеру
+const animationHeader = () => {
+	const airdropWrapperSections = document.querySelectorAll(".header__top-animation");
+
+	airdropWrapperSections.forEach((airdropWrapperSection) => {
+			function setupInstances() {
+					const parentWidth = airdropWrapperSection.clientWidth;
+					const childWidth = airdropWrapperSection.children[0].offsetWidth;
+
+					if (!parentWidth || !childWidth) {
+							console.error("Cannot calculate parent or child width:", {
+									parentWidth,
+									childWidth,
+							});
+							return;
+					}
+
+					const numInstances = Math.ceil(parentWidth / childWidth) + 1;
+
+					while (airdropWrapperSection.children.length < numInstances) {
+							for (let i = 0; i < numInstances; i++) {
+									const clone = airdropWrapperSection.children[i].cloneNode(true);
+									clone.classList.remove("header__top-content");
+									clone.classList.add("header__top-content-second");
+									airdropWrapperSection.appendChild(clone);
+							}
+					}
+			}
+
+			setupInstances();
+			window.addEventListener("resize", setupInstances);
+
+			const animationAirdropBlocks = document.querySelectorAll('.header__container-link');
+			const animationAirdropWrappers = document.querySelectorAll('.header__top-content');
+			const animationAirdropWrapperClones = document.querySelectorAll('.header__top-content-second');
+
+			animationAirdropBlocks.forEach((block) => {
+					block.addEventListener('mouseenter', () => {
+							animationAirdropWrappers.forEach(wrap => wrap.style.animationPlayState = "paused");
+							animationAirdropWrapperClones.forEach(clone => clone.style.animationPlayState = "paused");
+					});
+
+					block.addEventListener('mouseleave', () => {
+							animationAirdropWrappers.forEach(wrap => wrap.style.animationPlayState = "running");
+							animationAirdropWrapperClones.forEach(clone => clone.style.animationPlayState = "running");
+					});
+			});
+
+		
+	});
+}
+
+

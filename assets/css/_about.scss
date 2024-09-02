@@ -19,9 +19,9 @@
 	background: linear-gradient(180deg, #181C27 0%, #141721 100%);
 @media screen and (max-width:1023px) {
 	flex-direction: column-reverse;
-	width: 100vw;
-	margin-left: -20px;
-	margin-right: -25px;
+	min-width: calc(100vw - 30px);
+	margin-left: -15px;
+	margin-right: -15px;
 	padding: 70px 40px 0 40px;
 }
 @media screen and (max-width:767px) {

@@ -36,6 +36,8 @@ header{
     justify-content: flex-start;
 		
 }
+
+
 .header__container-link{
 	display: flex;
 	min-width: fit-content;
@@ -53,16 +55,17 @@ header{
 			font-weight: 500;
 			line-height: 125%;
 			padding: 4px 8px;
-			&.livedown{
-				background-color: $--red;
-			}
-			&.liveup{
+			border-radius: 5px;
+		
+		}
+		&.livedown .current {
+			background-color: $--red;
+		}
+		&.liveup .current{
 				background-color: $--green;
 			}
-		}
 }
 .header__bottom__container{
-
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -304,6 +307,7 @@ header{
 	}
 	
 }
+
 .burgerBtn{
 	display: none;
 	@media screen and (max-width:1023px) {
