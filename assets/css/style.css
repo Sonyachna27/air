@@ -340,11 +340,12 @@ header {
   font-weight: 500;
   line-height: 125%;
   padding: 4px 8px;
+  border-radius: 5px;
 }
-.header__container-link span.livedown {
+.header__container-link.livedown .current {
   background-color: #BE4D45;
 }
-.header__container-link span.liveup {
+.header__container-link.liveup .current {
   background-color: #00B27C;
 }
 
@@ -899,9 +900,9 @@ header {
   .hero__container {
     flex-direction: column;
     padding: 170px 20px 0 20px;
-    width: calc(100vw + 40px);
-    margin-left: -20px;
-    margin-right: -20px;
+    min-width: calc(100vw - 30px);
+    margin-left: -15px;
+    margin-right: -15px;
     background: url(../images/bg-mobile.svg) center center/cover no-repeat;
   }
 }
@@ -1010,9 +1011,9 @@ header {
 @media screen and (max-width: 1023px) {
   .about__wrapper {
     flex-direction: column-reverse;
-    width: 100vw;
-    margin-left: -20px;
-    margin-right: -25px;
+    min-width: calc(100vw - 30px);
+    margin-left: -15px;
+    margin-right: -15px;
     padding: 70px 40px 0 40px;
   }
 }
@@ -1861,11 +1862,11 @@ div.coins a img {
     border-radius: 40px 40px 0px 0px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .footer__container {
     padding: 40px 20px 20px 20px;
     border-radius: 40px 40px 0px 0px;
-    min-width: calc(100vw - 15px);
+    min-width: calc(100vw - 30px);
     margin-left: -15px;
     margin-right: -15px;
   }
