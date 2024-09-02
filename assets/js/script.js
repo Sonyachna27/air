@@ -182,13 +182,30 @@ const accordionFunction = () =>{
 
 
 
-	const showFilters = () =>{
-		const filterItem = document.querySelectorAll( ".filter");
-		filterItem.forEach((filter) => {
-				filter.addEventListener("click", () => filter.classList.toggle("showFilter"));
-			});
-		
-	}
+	const showFilters = () => {
+    const filterItem = document.querySelectorAll(".filter");
+
+    filterItem.forEach((filter) => {
+        const filterItemChoose = filter.querySelectorAll(".filter ul li");
+        filter.addEventListener("click", (event) => {
+            event.stopPropagation(); 
+            filter.classList.toggle("showFilter");
+        });
+
+        filterItemChoose.forEach((choose) => {
+            choose.addEventListener('click', (event) => {
+                event.stopPropagation(); 
+                filter.classList.remove("showFilter");
+            });
+        });
+    });
+
+    document.addEventListener('click', () => {
+        filterItem.forEach((filter) => {
+            filter.classList.remove("showFilter");
+        });
+    });
+};
 const similarSwiper = () =>{
 	const similarSwiperInit = document.querySelector('.similarSwiper');
 	if(!similarSwiperInit) return;
@@ -214,52 +231,53 @@ const similarSwiper = () =>{
 const animationHeader = () => {
 	const airdropWrapperSections = document.querySelectorAll(".header__top-animation");
 
-	airdropWrapperSections.forEach((airdropWrapperSection) => {
-			function setupInstances() {
-					const parentWidth = airdropWrapperSection.clientWidth;
-					const childWidth = airdropWrapperSection.children[0].offsetWidth;
+	airdropWrapperSections.forEach((airdropWrapperSection)=>{
+	
+					function setupInstances() {
+							const parentWidth = airdropWrapperSection.clientWidth;
+							const childWidth = airdropWrapperSection.children[0].offsetWidth;
+console.log(childWidth);
 
-					if (!parentWidth || !childWidth) {
-							console.error("Cannot calculate parent or child width:", {
-									parentWidth,
-									childWidth,
-							});
-							return;
-					}
+							if (!parentWidth || !childWidth) {
+									console.error("Cannot calculate parent or child width:", {
+											parentWidth,
+											childWidth,
+									});
+									return;
+							}
 
-					const numInstances = Math.ceil(parentWidth / childWidth) + 1;
+							const numInstances = Math.ceil(parentWidth / childWidth) + 1;
 
-					while (airdropWrapperSection.children.length < numInstances) {
-							for (let i = 0; i < numInstances; i++) {
-									const clone = airdropWrapperSection.children[i].cloneNode(true);
-									clone.classList.remove("header__top-content");
-									clone.classList.add("header__top-content-second");
-									airdropWrapperSection.appendChild(clone);
+							while (airdropWrapperSection.children.length < numInstances) {
+									for (let i = 0; i < numInstances; i++) {
+											const clone = airdropWrapperSection.children[i].cloneNode(true);
+											clone.classList.remove("header__top-content");
+											clone.classList.add("header__top-content-second");
+											airdropWrapperSection.appendChild(clone);
+									}
 							}
 					}
-			}
 
-			setupInstances();
-			window.addEventListener("resize", setupInstances);
+					setupInstances();
+					window.addEventListener("resize", setupInstances);
 
-			const animationAirdropBlocks = document.querySelectorAll('.header__container-link');
-			const animationAirdropWrappers = document.querySelectorAll('.header__top-content');
-			const animationAirdropWrapperClones = document.querySelectorAll('.header__top-content-second');
+					const animationAirdropBlocks = document.querySelectorAll('.header__container-link');
+					const animationAirdropWrappers = document.querySelectorAll('.header__top-content');
+					const animationAirdropWrapperClones = document.querySelectorAll('.header__top-content-second');
 
-			animationAirdropBlocks.forEach((block) => {
-					block.addEventListener('mouseenter', () => {
-							animationAirdropWrappers.forEach(wrap => wrap.style.animationPlayState = "paused");
-							animationAirdropWrapperClones.forEach(clone => clone.style.animationPlayState = "paused");
+					animationAirdropBlocks.forEach((block) => {
+							block.addEventListener('mouseenter', () => {
+									animationAirdropWrappers.forEach(wrap => wrap.style.animationPlayState = "paused");
+									animationAirdropWrapperClones.forEach(clone => clone.style.animationPlayState = "paused");
+							});
+
+							block.addEventListener('mouseleave', () => {
+								animationAirdropWrappers.forEach(wrap => wrap.style.animationPlayState = "running");
+									animationAirdropWrapperClones.forEach(clone => clone.style.animationPlayState = "running");
+							});
 					});
 
-					block.addEventListener('mouseleave', () => {
-							animationAirdropWrappers.forEach(wrap => wrap.style.animationPlayState = "running");
-							animationAirdropWrapperClones.forEach(clone => clone.style.animationPlayState = "running");
-					});
-			});
-
-		
-	});
+	})	
 }
 
 

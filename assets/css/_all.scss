@@ -28,19 +28,6 @@
 	@media screen and (max-width:767px) {
 		max-width: 100%;
 	}
-	// @media screen and (min-width:768px) {
-	// 	&:hover{
-	// 		ul{
-	// 			visibility: visible;
-	// 			opacity: 1;
-	// 		}
-	// 		& div{
-	// 			&:after{
-	// 				transform: rotate(180deg);
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	& div{
 		@include p2;
@@ -84,10 +71,7 @@
 			transition: 0.5s ease-in-out;
 			z-index: -4;
 			
-			&:hover{
-				visibility: visible;
-				opacity: 1;
-			}
+		
 			@media screen and (max-width:1023px) {
 				opacity: 0;
 				max-height: 0;

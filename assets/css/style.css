@@ -351,6 +351,10 @@ header {
   padding: 10px 0;
   border-bottom: 1px solid #252938;
   background-color: #141721;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 @keyframes slideLeft {
@@ -358,21 +362,20 @@ header {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 20px));
   }
 }
 .header__top-content,
 .header__top-content-second {
   display: flex;
   flex-direction: row;
-  animation: slideLeft 65s linear infinite;
   -moz-column-gap: 37px;
        column-gap: 37px;
-  margin-right: 50px;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   display: flex;
   justify-content: flex-start;
+  animation: slideLeft 65s infinite linear;
 }
 
 .header__container-link {
@@ -383,6 +386,7 @@ header {
   width: 250px;
   white-space: nowrap;
   padding: 10px 20px;
+  transition: all 0.1s ease-in-out;
 }
 .header__container-link img {
   width: 26px;
@@ -3061,10 +3065,6 @@ div.coins a img {
   visibility: hidden;
   transition: 0.5s ease-in-out;
   z-index: -4;
-}
-.filter ul:hover {
-  visibility: visible;
-  opacity: 1;
 }
 @media screen and (max-width: 1023px) {
   .filter ul {
