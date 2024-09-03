@@ -23,13 +23,17 @@ max-width: 700px;
 	& table{
 		max-width: 100%;
     width: 100%;
-    border-collapse: separate;
-		border-spacing: 0 3px;
+    border-collapse: collapse;
+		border-spacing: 0;
 		border-radius: 10px;
 		overflow: hidden;
-		background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
 		@media screen and (max-width:767px) {
 			margin-bottom: 50px;
+		}
+		& tbody{
+			display: flex;
+			flex-direction: column;
+			width: 100%;
 		}
 		& td,
 		& th{
@@ -87,6 +91,8 @@ max-width: 700px;
 		
 			& tr{
 				background: $--dark-theme-blue;
+				display: flex;
+				margin-bottom: 3px;
 				&:last-child td:first-child{
 					border-bottom-left-radius: 10px;
 				}
