@@ -369,8 +369,6 @@ header {
 .header__top-content-second {
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 37px;
-       column-gap: 37px;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   display: flex;
@@ -1415,6 +1413,7 @@ header {
   border-spacing: 0 3px;
   border-radius: 10px;
   overflow: hidden;
+  background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
 }
 @media screen and (max-width: 767px) {
   .curren__table-wrap table {
@@ -1884,18 +1883,27 @@ div.coins a img {
   }
 }
 
-.accord-item:hover .accord-count,
+@media screen and (min-width: 768px) {
+  .accord-item:hover .accord-count {
+    background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
+    color: #141721;
+  }
+  .accord-item:hover .initial-state {
+    opacity: 0;
+  }
+  .accord-item:hover .hover-state {
+    opacity: 1;
+  }
+}
 .accord-item.active .accord-count {
   background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
   color: #141721;
 }
 
-.accord-item:hover .initial-state,
 .accord-item.active .initial-state {
   opacity: 0;
 }
 
-.accord-item:hover .hover-state,
 .accord-item.active .hover-state {
   opacity: 1;
 }
