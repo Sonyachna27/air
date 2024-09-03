@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* reset */
 *,
 *::before,
@@ -199,7 +200,7 @@ footer {
 }
 
 .main-content {
-  width: 67%;
+  width: 77%;
 }
 @media screen and (max-width: 767px) {
   .main-content {
@@ -208,7 +209,7 @@ footer {
 }
 
 .navbar {
-  width: 33%;
+  width: 22.5%;
 }
 @media screen and (max-width: 767px) {
   .navbar {
@@ -240,6 +241,36 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.navbar-news .news-item-img {
+  aspect-ratio: 270/160;
+  min-height: 160px;
+}
+.navbar-news .news-item-img img {
+  aspect-ratio: inherit;
+  min-height: 160px;
+}
+.navbar-news .news-item-wrap {
+  padding: 20px 10px;
+}
+.navbar-news .news-item-wrap div {
+  text-align: left;
+}
+
+.airdrop-list .airdrop__item {
+  padding: 25px 20px;
+}
+.airdrop-list .airdrop__item_top-icon {
+  max-width: 40px;
+  max-height: 40px;
+}
+.airdrop-list .airdrop__socials a {
+  max-width: 28px;
+  max-height: 28px;
+}
+.airdrop-list .airdrop__bottom span {
+  font-size: 10px;
 }
 
 .socials {
@@ -348,7 +379,6 @@ header {
   gap: 30px;
   color: #FFF;
   overflow: hidden;
-  padding: 10px 0;
   border-bottom: 1px solid #252938;
   background-color: #141721;
   position: relative;
@@ -357,34 +387,18 @@ header {
           user-select: none;
 }
 
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% - 20px));
-  }
-}
-.header__top-content,
-.header__top-content-second {
-  display: flex;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  display: flex;
-  justify-content: flex-start;
-  animation: slideLeft 65s infinite linear;
-}
-
 .header__container-link {
   display: flex;
   min-width: -moz-fit-content;
   min-width: fit-content;
   align-items: center;
-  width: 250px;
+  min-width: fit-content;
+  width: 100%;
   white-space: nowrap;
-  padding: 10px 20px;
+  padding: 10px 30px;
   transition: all 0.1s ease-in-out;
+  background-color: #141721;
+  z-index: 0;
 }
 .header__container-link img {
   width: 26px;
@@ -403,6 +417,29 @@ header {
 }
 .header__container-link.liveup .current {
   background-color: #00B27C;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: #141721;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  width: auto; /* або конкретна ширина */
+  white-space: nowrap; /* Запобігання переносу рядків */
+  overflow: visible;
 }
 
 .header__bottom__container {
@@ -1345,7 +1382,7 @@ header {
 
 .choose__scrollBar {
   position: sticky;
-  top: 20px;
+  top: 150px;
   right: 0;
   width: 27px;
   height: 501px;
@@ -1409,16 +1446,20 @@ header {
 .curren__table-wrap table {
   max-width: 100%;
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 3px;
+  border-collapse: collapse;
+  border-spacing: 0;
   border-radius: 10px;
   overflow: hidden;
-  background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
 }
 @media screen and (max-width: 767px) {
   .curren__table-wrap table {
     margin-bottom: 50px;
   }
+}
+.curren__table-wrap table tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .curren__table-wrap table td, .curren__table-wrap table th {
   padding: 20px 40px;
@@ -1468,6 +1509,8 @@ header {
 }
 .curren__table-wrap table tr {
   background: #1E222F;
+  display: flex;
+  margin-bottom: 3px;
 }
 .curren__table-wrap table tr:last-child td:first-child {
   border-bottom-left-radius: 10px;
@@ -1507,6 +1550,7 @@ header {
   border-radius: 20px;
   background: #181C27;
   padding: 10px;
+  height: auto;
 }
 
 .news-item-img {
@@ -1519,7 +1563,6 @@ header {
   max-height: 250px;
   height: 100%;
   flex-grow: 1;
-  margin-bottom: 30px;
 }
 @media screen and (max-width: 767px) {
   .news-item-img {
@@ -1548,6 +1591,11 @@ header {
   flex-direction: column;
   flex-grow: 1;
   padding: 20px;
+}
+@media screen and (max-width: 767px) {
+  .news-item-wrap {
+    padding: 20px 10px;
+  }
 }
 .news-item-wrap div:not([class]),
 .news-item-wrap h3 {

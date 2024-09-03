@@ -8,12 +8,6 @@
 .choose__content{
 display: flex;
 gap: 20px;
-// max-height: 102vh;
-// height: 100vh;
-// overflow: hidden;
-// overflow-y: auto;
-// position: relative;
-// height: min-content;
 width: 100%;
 &::-webkit-scrollbar {
 	background-color: #181C27;
@@ -140,7 +134,7 @@ width: 100%;
 }
 .choose__scrollBar{
 	position: sticky;
-	top: 20px;
+	top: 150px;
 	right: 0;
 	width: 27px;
 	height: 501px;
