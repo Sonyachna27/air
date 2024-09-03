@@ -170,7 +170,7 @@ const accordionFunction = () => {
   
   accordionItems.forEach((item) => {
     item.addEventListener("click", function (event) {
-      // Перевірка, що подія сталася не на тексті, а на самому item або його дочірньому елементі
+     
       if (event.target.closest('.accord-item')) {
         item.classList.toggle("active");
       }
