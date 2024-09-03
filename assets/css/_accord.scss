@@ -16,7 +16,6 @@
 	  display: flex;
 	  align-items: center;
 	  gap: 20px;
-		
 	  padding: 30px 40px;
 	  border-radius: 500px;
 		background-color: $--dark-theme-blue-2;
@@ -153,16 +152,27 @@
 	}
 	
   }
-  .accord-item:hover .accord-count,
+	@media screen and (min-width:768px) {
+		.accord-item:hover .accord-count{
+			background: $--blue;
+		color: $--dark-theme-background;
+		}
+		.accord-item:hover .initial-state{
+			opacity: 0;
+	}
+	.accord-item:hover .hover-state{
+	opacity: 1;
+	}
+	}
+
   .accord-item.active .accord-count{
 		background: $--blue;
 		color: $--dark-theme-background;
 	}
-	.accord-item:hover .initial-state,
+	
 	.accord-item.active .initial-state {
     opacity: 0;
 }
-.accord-item:hover .hover-state,
 	.accord-item.active  .hover-state {
 	opacity: 1;
 }

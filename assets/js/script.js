@@ -93,45 +93,57 @@ const airDropWrapperScroll = () => {
 	});
 };
 
-const newsSliderFunction = () =>{
-	const newsSliderInit = document.querySelector('.newsSlider')
-	
-		if(!newsSliderInit) return;
-		const newsArrowPrev = document.querySelector(".news-button-prev");
-		const newsArrowNext = document.querySelector(".news-button-next");
-		const windowInnerWidth = window.innerWidth;
-		
-    if (newsSliderInit.length < 2 || windowInnerWidth <= 768) {
+const newsSliderFunction = () => {
+  const newsSliderInit = document.querySelector('.newsSlider');
+  if (!newsSliderInit) return;
+
+  const newsArrowPrev = document.querySelector(".news-button-prev");
+  const newsArrowNext = document.querySelector(".news-button-next");
+
+  const updateNavigationVisibility = () => {
+    const windowInnerWidth = window.innerWidth;
+    const slides = newsSliderInit.querySelectorAll('.swiper-slide');
+    
+    // Перевірка на кількість слайдів
+    const showArrows = slides.length > 1;
+
+    if (windowInnerWidth <= 768 && showArrows) {
       newsArrowPrev.style.display = "none";
       newsArrowNext.style.display = "none";
     } else {
       newsArrowPrev.style.display = "flex";
       newsArrowNext.style.display = "flex";
     }
-	const newsSlider = new Swiper(".newsSlider", {
-      pagination: {
-        el: ".news-pagination",
-				clickable: true,
-      },
-			navigation: {
-        nextEl: ".news-button-next",
-        prevEl: ".news-button-prev",
-      },
-			slidesPerView: 1,
-      spaceBetween: 10,
-      breakpoints: {
-        767: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1023: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-			},
+  };
 
-    });
-}
+  // Ініціалізація слайдера
+  const newsSlider = new Swiper(".newsSlider", {
+    pagination: {
+      el: ".news-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".news-button-next",
+      prevEl: ".news-button-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1023: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+    on: {
+      init: updateNavigationVisibility,
+      resize: updateNavigationVisibility,
+    },
+  });
+};
 const observeElements = () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -155,8 +167,8 @@ const observeElements = () => {
 }
 
 const accordionFunction = () =>{
-  const accordionItemsProduct = document.querySelectorAll(".accord-item");
-    accordionItemsProduct.forEach((item) => {
+  const accordionItems = document.querySelectorAll(".accord-item");
+    accordionItems.forEach((item) => {
       item.addEventListener("click", function () {
         this.classList.toggle("active");
       });
