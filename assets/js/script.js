@@ -35,7 +35,6 @@ window.addEventListener("load", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
 	animationHeader();
-	// toggleClasses();
 	airDropWrapperScroll();
 	toggleMenu();
 	observeElements();
@@ -166,14 +165,18 @@ const observeElements = () => {
 
 }
 
-const accordionFunction = () =>{
+const accordionFunction = () => {
   const accordionItems = document.querySelectorAll(".accord-item");
-    accordionItems.forEach((item) => {
-      item.addEventListener("click", function () {
-        this.classList.toggle("active");
-      });
+  
+  accordionItems.forEach((item) => {
+    item.addEventListener("click", function (event) {
+      // Перевірка, що подія сталася не на тексті, а на самому item або його дочірньому елементі
+      if (event.target.closest('.accord-item')) {
+        item.classList.toggle("active");
+      }
     });
-  }
+  });
+};
 
 	const showNavLink = () =>{
 		const navBarItem = document.querySelectorAll( ".header__nav .menu li:has(.sub-menu)");

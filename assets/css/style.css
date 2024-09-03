@@ -1497,7 +1497,7 @@ header {
   border-radius: 5px;
 }
 .curren__table-wrap table td:nth-of-type(4), .curren__table-wrap table th:nth-of-type(4) {
-  width: 22%;
+  width: 30%;
 }
 .curren__table-wrap table tr:nth-of-type(1) {
   background: linear-gradient(90deg, #D2B143 0%, #FFE9A0 100%);
