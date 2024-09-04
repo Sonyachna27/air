@@ -152,17 +152,17 @@
 	}
 	
   }
-	@media screen and (min-width:768px) {
+	@media screen and (min-width:1023px) {
 		.accord-item:hover .accord-count{
 			background: $--blue;
-		color: $--dark-theme-background;
+			color: $--dark-theme-background;
 		}
 		.accord-item:hover .initial-state{
 			opacity: 0;
-	}
-	.accord-item:hover .hover-state{
-	opacity: 1;
-	}
+		}
+		.accord-item:hover .hover-state{
+		opacity: 1;
+		}
 	}
 
   .accord-item.active .accord-count{

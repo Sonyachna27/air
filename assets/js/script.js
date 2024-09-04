@@ -169,11 +169,9 @@ const accordionFunction = () => {
   const accordionItems = document.querySelectorAll(".accord-item");
   
   accordionItems.forEach((item) => {
-    item.addEventListener("click", function (event) {
-     
-      if (event.target.closest('.accord-item')) {
+    item.addEventListener("click", function () {
         item.classList.toggle("active");
-      }
+				alert('hi')
     });
   });
 };
