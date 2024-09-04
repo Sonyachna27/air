@@ -171,7 +171,6 @@ const accordionFunction = () => {
   accordionItems.forEach((item) => {
     item.addEventListener("click", function () {
         item.classList.toggle("active");
-				alert('hi')
     });
   });
 };
