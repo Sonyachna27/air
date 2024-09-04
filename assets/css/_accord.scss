@@ -71,7 +71,7 @@
 		max-height: 0;
 		overflow: hidden;
 		visibility: hidden;
-		transition: 0.3s ease;
+		transition: 0.2s linear;
 		padding: 80px 40px 0px 40px;
 		position: relative;
 		z-index: -1;
@@ -95,7 +95,7 @@
 		background-color: $--dark-blue;
 		border-radius: 500px;
 		max-width:50px;
-		transition: .3s ease;
+		transition: .3s linear;
 		display: flex;
 		align-items: center;
 		justify-content: center;
