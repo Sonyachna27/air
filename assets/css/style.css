@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* reset */
 *,
 *::before,
@@ -126,6 +125,11 @@ main {
   border: 1px solid transparent;
   cursor: pointer;
   position: relative;
+  transition: 0.3s linear;
+}
+.btn:hover {
+  transform: perspective(800px) rotateY(-10deg) rotateX(-10deg) translateZ(-10px);
+  transform-origin: center bottom;
 }
 
 .gold-btn {
@@ -213,7 +217,7 @@ footer {
 }
 @media screen and (max-width: 767px) {
   .navbar {
-    width: 100%;
+    display: none;
   }
 }
 .navbar div:not([class]) {
@@ -395,10 +399,15 @@ header {
   min-width: fit-content;
   width: 100%;
   white-space: nowrap;
-  padding: 10px 30px;
+  padding: 10px 40px 10px 20px;
   transition: all 0.1s ease-in-out;
   background-color: #141721;
   z-index: 0;
+}
+@media screen and (min-width: 768px) {
+  .header__container-link:hover {
+    background-color: #252938;
+  }
 }
 .header__container-link img {
   width: 26px;
@@ -437,8 +446,8 @@ header {
   padding: 0;
   position: relative;
   cursor: pointer;
-  width: auto; /* або конкретна ширина */
-  white-space: nowrap; /* Запобігання переносу рядків */
+  width: auto;
+  white-space: nowrap;
   overflow: visible;
 }
 
