@@ -64,6 +64,7 @@ main{
 	border: 1px solid transparent;
 	cursor: pointer;
 	position: relative;
+	transition: .3s linear;
 
 }
 .gold-btn{
@@ -86,9 +87,7 @@ footer{
 .mb-s{
 	margin-bottom: 60px;
 }
-.breadcrumbs {
 
-}
 .breadcrumbs__container {
   padding: 25px 0 60px;
   display: flex;
@@ -139,7 +138,7 @@ footer{
 .navbar{
 	width: 22.5%;
 	@media screen and (max-width:767px) {
-		width: 100%;
+	display: none;
 	}
 	& div:not([class]){
 		@include titleH4;

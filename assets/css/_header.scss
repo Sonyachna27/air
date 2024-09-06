@@ -24,10 +24,15 @@ header{
 	min-width: fit-content;
 	width: 100%;
     white-space: nowrap;
-		padding: 10px 30px;
+		padding: 10px 40px 10px 20px;
 		transition: all 0.1s ease-in-out;
 		background-color: $--dark-theme-background;
 		z-index: 0;
+	@media screen and (min-width:768px) {
+		&:hover{
+			background-color: $--dark-blue;
+		}
+	}
 		& img{
 			width: 26px;
 			height: 26px;
@@ -39,7 +44,6 @@ header{
 			line-height: 125%;
 			padding: 4px 8px;
 			border-radius: 5px;
-		
 		}
 		&.livedown .current {
 			background-color: $--red;
@@ -68,17 +72,11 @@ header{
 		padding: 0;
 		position: relative;
 		cursor: pointer;
-		width: auto; /* або конкретна ширина */
-    white-space: nowrap; /* Запобігання переносу рядків */
+		width: auto; 
+    white-space: nowrap; 
     overflow: visible;
 	}
 
-
-
-
-
-
-//fyb';lgdf
 
 .header__bottom__container{
 	display: flex;
@@ -137,7 +135,6 @@ header{
 					left: 0;
 				}
 	}
-
 
  & .menu{
 			display: flex;
